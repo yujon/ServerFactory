@@ -1,18 +1,14 @@
-var TcpServerCreator = require('../index.js')
+var factory = require('../index.js')
 
-var pcServer = TcpServerCreator.createPCServer({
+var pcServer = factory.createTCPServer([1000, 331, 136, 222], {
 	successFn: successFn,
 	disconnectFn: disconnectFn
 })
 
-var mobileServer = TcpServerCreator.createMobileServer({
-	successFn: successFn,
-	disconnectFn: disconnectFn
-})
 
 function successFn(data) {
 	console.log(data)
-	
+
 	pcServer.sendAll({
 		from: 'pc',
 		goal: 'test'
