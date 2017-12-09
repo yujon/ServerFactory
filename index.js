@@ -14,10 +14,10 @@ const TcpServer = require('./tcp/TcpServer.js')
 
 const Factory = function() {
   let setver;
-  
+
   //生产tcp服务器
   this.createTCPServer = function(ports, option) {
-    server = new TcpServer(option); 
+    server = new TcpServer(option);
 
     server.listen(ports, function(port) {
       if (port < 0) {
@@ -27,6 +27,22 @@ const Factory = function() {
       console.log('mobile server is listening on port:' + port);
     });
     return server;
+  }
+
+  //生产http服务器
+  this.createHTTPServer = function(ports, option) {
+    //do nothing
+  }
+
+  //生产https服务器
+  this.createHTTPSServer = function(ports, option) {
+    //do nothing
+  }
+
+
+  //生产tls服务器
+  this.createTLSServer = function(ports, option) {
+    //do nothing
   }
 
 }
