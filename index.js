@@ -1,6 +1,6 @@
 //入口
 
-const TcpServer = require('./tcp/TcpServer.js')
+const TcpServer = require('./server/TcpServer.js')
 
 /**
  *  ports 端口数组
